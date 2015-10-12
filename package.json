@@ -1,0 +1,26 @@
+{
+  "name": "eintopf-node-dev",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "sh ./start.sh",
+    "stop": "sh ./stop.sh",
+    "reinstall": "sh ./install.sh",
+    "restart": "sh ./restart.sh"
+  },
+  "mazehall": true,
+  "eintopf": {
+    "name": "Node dev",
+    "description": "Nodejs development pattern",
+    "actions": [
+      {
+        "script": "restart",
+        "warning": "restart app"
+      },
+      {
+        "script": "reinstall",
+        "warning": "reinstall npm dependencies"
+      }
+    ]
+  },
+  "license": "MIT"
+}
