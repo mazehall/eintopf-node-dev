@@ -16,7 +16,7 @@ Changes in the module configuration will be loaded by Eintopf after a while. To 
 
 ### 1. Clone the sources
 
-Go into your Eintopf configs folder (default: ~/.eintopf/configs) and clone the [github repository](https://github.com/mazehall/eintopf-node-dev).
+Go into your Eintopf configs folder (default: ~/.eintopf/default/configs) and clone the [github repository](https://github.com/mazehall/eintopf-node-dev).
 
     git clone https://github.com/mazehall/eintopf-node-dev my-node-app
 
