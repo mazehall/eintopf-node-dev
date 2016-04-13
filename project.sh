@@ -8,19 +8,16 @@ PROJECT_DIR="${PWD##*/}"    # start path for all project dev sources (default to
 
 
 . ./project.env.sh
+if ! [ -d "$PROJECT_PATH" ]; then
+    mkdir -p ${PROJECT_PATH}
+fi
 
 xcompose () {
     cd "$CONFIG_PATH" && docker-compose $@
 }
-xgit () {
-    git "$@"
-}
-xnpm () {
-    cd "$PROJECT_PATH" && npm $@
-}
 
 if [ "$INBOX" != true ]; then
   xcompose () {
-      callInbox "PROJECT_PATH=${PROJECT_PATH} docker-compose $@"
+      callInbox "PROJECT_PATH=${INBOX_PROJECT_PATH} docker-compose $@"
   }
 fi

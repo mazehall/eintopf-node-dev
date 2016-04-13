@@ -3,7 +3,7 @@
 . ./project.sh
 
 echo "installing node dependencies..."
-if ! xnpm install; then
+if ! npm install; then
   echo "installing node dependencies failed"
   exit 1
 fi

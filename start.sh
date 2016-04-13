@@ -4,7 +4,8 @@
 
 if ! [ -d "$PROJECT_PATH/web/.git" ]; then
   echo "cloning node sources..."
-  if ! xgit clone https://github.com/mazelab/node-dev "$PROJECT_PATH"; then
+  cd ${PROJECT_PATH}
+  if ! git clone https://github.com/mazelab/node-dev web; then
     echo "git clone failed"
     exit 1
   fi
@@ -12,7 +13,8 @@ fi
 
 if ! [ -d "$PROJECT_PATH/web/node_modules" ]; then
   echo "installing node dependencies..."
-  if ! xnpm install; then
+  cd ${PROJECT_PATH}/web
+  if ! npm install; then
     echo "installing node dependencies failed"
     exit 1
   fi

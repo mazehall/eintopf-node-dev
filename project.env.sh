@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
 : ${EINTOPF_HOME:=$HOME}
+EINTOPF_HOME="`cd ${EINTOPF_HOME}; pwd`"
 
-#####
-# static path configuration
-#####
 
 # general env
 CONFIG_DIR="${PWD##*/}"
