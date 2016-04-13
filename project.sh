@@ -2,19 +2,12 @@
 
 #####
 # change this part for your own configuration
+PROJECT_DIR="${PWD##*/}"    # start path for all project dev sources (default to last part of path)
+
 #####
 
-PROJECT_DIR="node"
-CONFIG_DIR="${PWD##*/}"
 
-####
 . ./project.env.sh
-####
-
-
-####
-# implement you own cli wrapper
-####
 
 xcompose () {
     cd "$CONFIG_PATH" && docker-compose $@
@@ -27,14 +20,7 @@ xnpm () {
 }
 
 if [ "$INBOX" != true ]; then
-  if callInbox "which docker-compose >> /dev/null"; then
-      xcompose () {
-          callInbox "docker-compose $@"
-      }
-  fi
-  if callInbox "which npm >> /dev/null"; then
-      xnpm () {
-          callInbox "npm $@" "$INBOX_PROJECT_PATH"
-      }
-  fi
+  xcompose () {
+      callInbox "PROJECT_PATH=${PROJECT_PATH} docker-compose $@"
+  }
 fi

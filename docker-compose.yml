@@ -1,9 +1,9 @@
 web:
-  image: node:4.1.2-slim
+  image: node:5-slim
   environment:
     - VIRTUAL_HOST=node.dev
   volumes:
-    - /projects/node:/app
+    - ${PROJECT_PATH}/web:/app
   expose:
     - 3000
-  command: sh -c 'cd /app && npm start'
+  command: sh -c 'cd /app && npm run start-dockerized'
