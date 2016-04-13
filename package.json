@@ -1,6 +1,6 @@
 {
   "name": "eintopf-node-dev",
-  "version": "0.1.0",
+  "version": "1.3.0",
   "scripts": {
     "start": "sh ./start.sh",
     "stop": "sh ./stop.sh",
@@ -14,11 +14,13 @@
     "actions": [
       {
         "script": "restart",
-        "warning": "restart app"
+        "name": "Restart all services",
+        "warning": "Call docker-compose restart"
       },
       {
         "script": "reinstall",
-        "warning": "reinstall npm dependencies"
+        "name": "npm install",
+        "warning": "Reinstall npm dependencies"
       }
     ]
   },
